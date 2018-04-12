@@ -80,7 +80,7 @@ if [ ! -f settings.json ]; then
 			  },
 	EOF
 
-	if [ -n "$ETHERPAD_ADMIN_PASSWORD" ]; then
+  if [ -n "$ETHERPAD_ADMIN_PASSWORD" ]; then
 
 		: ${ETHERPAD_ADMIN_USER:=admin}
 
