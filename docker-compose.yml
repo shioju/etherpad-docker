@@ -2,7 +2,8 @@ version: '3'
 services:
   web:
     # image: tvelocity/etherpad-lite
-    build: .
+    # build: .
+    image: shioju/etherpad-docker-prebuilt
     depends_on:
       - db
     environment:
