@@ -4,11 +4,14 @@ RUN apt-get update && \
     apt-get install -y gzip git curl python libssl-dev mysql-client && \
     rm -r /var/lib/apt/lists/*
 
+USER root
+
 RUN cd /opt && \
     git clone https://github.com/ether/etherpad-lite && \
     cd etherpad-lite && \
     bin/installDeps.sh && \
-    rm settings.json
+    rm settings.json && \
+    chmod -R g+w /opt/etherpad-lite
 
 COPY entrypoint.sh /entrypoint.sh
 VOLUME /opt/etherpad-lite/var
