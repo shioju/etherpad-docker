@@ -10,6 +10,7 @@ RUN cd /opt && \
     git clone https://github.com/ether/etherpad-lite && \
     cd etherpad-lite && \
     bin/installDeps.sh && \
+    sed -i "s/bin\/installDeps/#bin\/installDeps/" bin/run.sh && \
     rm settings.json && \
     chmod -R g+w /opt/etherpad-lite
 
